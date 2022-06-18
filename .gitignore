@@ -1,3 +1,5 @@
 bitrix
 upload
 .vscode
+local/php_interface/vendor
+test.php

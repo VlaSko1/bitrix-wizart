@@ -1,6 +1,5 @@
 <?php
 
-
 $arTemplate = [
   'NAME' => 'Шаблон wizart',
   'DESCRIPTION' => 'Тестовое задание от компании Wizart',
