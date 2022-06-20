@@ -116,3 +116,23 @@ html, body {
   font-weight: 400;
   font-size: 14px;
 }
+.ui-alert-div_mod{
+  width: 320px;
+  display: block;
+  min-width: 320px;
+  overflow: auto !important;
+  font-family: 'Open Sans' !important;
+  font-style: normal;
+  font-weight: 400;
+  height: 40px;
+  padding: 2px 5px;
+}
+#name-error, #surname-error, #email-error, #birthday-error, #tel-error, #city-error, #file-error {
+  display: none;
+}
+input::-moz-placeholder { 
+  color: #000000; 
+}
+input::-webkit-input-placeholder {
+  color: #000000; 
+}
