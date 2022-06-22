@@ -128,6 +128,7 @@ function showModal() {
     clearTimeout(timerId);
     hideModal(modal);
   }
+  clearForm();
 }
 
 /**
@@ -136,4 +137,9 @@ function showModal() {
  */
 function hideModal(elem) {
   elem.style.display = 'none';
+}
+
+function clearForm() {
+  let form = document.getElementById('form');
+  form.reset();
 }
