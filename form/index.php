@@ -103,13 +103,18 @@ $APPLICATION->SetTitle("Form");
                 </label>
                 <div class="ui-alert ui-alert-danger ui-alert-div_mod" id="file-error">
                     <span class="ui-alert-message ui-alert-span_mod" id="file-error-span">
-                        Файл портфолио должен иметь расширение "jpg", "png" или "bmp".
+                        Файл портфолио должен иметь расширение "jpg", "jpeg", "png" или "bmp" и не должен быть меньше 40 байт или больше 900 Кбайт.
                     </span>
                 </div>
             </div>
             <button class="ui-btn ui-btn-md crm-btn-save" type="submit" id="sbm">Отправить заявку</button>
         </form>
     </section>
+    <div class="modal-view" id="modal">
+        <div class="modal-view-content">
+
+        </div>
+    </div>
 </div>
 
 <?php

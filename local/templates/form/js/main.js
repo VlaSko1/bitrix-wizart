@@ -21,16 +21,18 @@ window.onload = function() {
   if (validateForm(elemData)) {
     let indQuery = document.location.href.indexOf('?');
     let urlForm = document.location.href.slice(0, indQuery);
-    let response = await fetch(`${urlForm}validate.php`, {
+    
+    let response = await fetch(`${urlForm}/validate.php`, {
       method: 'POST',
       body: formData,
     });
-    // Доделай ответ
-    let result = await response.json();
+    
+    let data = await response.json();
 
-    alert(result.message);
+    if (data.result) {
+      showModal();
+    }
   }
-
 }
 
 /**
@@ -47,7 +49,7 @@ function validateForm(objForValid) {
     'birthday': /^\d{4}-\d{2}-\d{2}$/,
     'tel': /^\+7\s\(\d{3}\)\d{3}-\d{2}-\d{2}$/,
     'city': /^[А-Яа-я_-\s]{2,35}$/,
-    'file': /^[^<>"?|]+\.(jpg|png|bmp)$/,
+    'file': /^[^<>"?|]+\.(jpg|png|bmp|jpeg)$/,
   };
   Object.keys(objValidation).forEach((key) => {
     if(objValidation[key].test(objForValid[key])) {
@@ -113,3 +115,25 @@ function mask(event) {
   }
 }
 
+/**
+ * Отображает модальное окно в случае успешной отправки формы и валидации её на сервере
+ */
+function showModal() {
+  const modal = document.getElementById('modal');
+  modal.style.display = 'flex';
+  let timerId = setTimeout(() => {
+    hideModal(modal);
+  }, 2000);
+  window.onclick = function () {
+    clearTimeout(timerId);
+    hideModal(modal);
+  }
+}
+
+/**
+ * Функция скрывает из элемент разметки 
+ * @param {object} elem html-элемент, которому данная фнукция присваиват значение display: none
+ */
+function hideModal(elem) {
+  elem.style.display = 'none';
+}

@@ -11,9 +11,10 @@ html, body {
   font-family: 'Open Sans', Arial, sans-serif;
 }
 .wrapper {
-  width: 100wh;
+  width: 100vw;
   height: 100vh;
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   background: url('/local/templates/form/images/image_bg_1.png') 50% 0px no-repeat, 
@@ -135,4 +136,22 @@ input::-moz-placeholder {
 }
 input::-webkit-input-placeholder {
   color: #000000; 
+}
+
+/*Модальное окно*/
+.modal-view {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(103, 100, 100, 0.8);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+.modal-view-content {
+  width: 396px;
+  height: 299px;
+  background: url('/local/templates/form/images/view.png');
 }
